@@ -1,44 +1,38 @@
+/*  your css code here. If applicable */
 class Person {
-    constructor(name, age){
-        this.name = name;
-        this.age = age;
+    constructor(name, age) {
+        this._name = name;
+        this._age = age;
     }
 
-    get name(){
-        return this.name;
-    }
-    
-    set age(value){
-        this.age = value;
+    // Getter for name
+    get name() {
+        return this._name;
     }
 
-	get age() {
-	    return this.age;
+    // Setter for age
+    set age(value) {
+        this._age = value;
+    }
+
+    // Getter for age
+    get age() {
+        return this._age;
     }
 }
 
 class Student extends Person {
-
-    constructor(){
-        super();
-    }
-
-    Study(){
-        console.log(`${this.name} is studying`)
+    study() {
+        console.log(`${this.name} is studying`);
     }
 }
 
 class Teacher extends Person {
-    constructor(){
-        super();
-    }
-
-    teach(){
+    teach() {
         console.log(`${this.name} is teaching`);
     }
 }
 
-// Do not change the code below this line
 window.Person = Person;
 window.Student = Student;
 window.Teacher = Teacher;
